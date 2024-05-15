@@ -7,3 +7,8 @@
       path: /etc/foo.conf
       state: touch
       mode: u=rw,g=r,o=r
+      
+  - name: Install nmap
+    community.general.zypper:
+      name: nmap
+      state: present
