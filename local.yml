@@ -3,9 +3,14 @@
   become: true
   tasks:
 
-  - name: Perform a dist-upgrade with additional arguments
+  - name: Zypper ref and dup
     community.general.zypper:
       name: '*'
       state: dist-upgrade
       allow_vendor_change: true
       update_cache: true
+
+  - name: Install Solarr (logitech wireless keyboards and mice)
+    community.general.zypper:
+      name: solaar
+      state: present
