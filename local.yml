@@ -8,5 +8,4 @@
       name: '*'
       state: dist-upgrade
       allow_vendor_change: true
-      extra_args: '--allow-arch-change'
       update_cache: true
