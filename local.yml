@@ -2,13 +2,11 @@
   connection: local
   become: true
   tasks:
-  - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
-    ansible.builtin.file:
-      path: /etc/foo.conf
-      state: touch
-      mode: u=rw,g=r,o=r
-      
-  - name: Install nmap
+
+  - name: Perform a dist-upgrade with additional arguments
     community.general.zypper:
-      name: nmap
-      state: present
+      name: '*'
+      state: dist-upgrade
+      allow_vendor_change: true
+      extra_args: '--allow-arch-change'
+      update_cache: true
